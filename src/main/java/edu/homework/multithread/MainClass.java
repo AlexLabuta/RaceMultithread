@@ -1,14 +1,11 @@
 package edu.homework.multithread;
 
-import java.util.concurrent.CountDownLatch;
-import java.util.concurrent.CyclicBarrier;
-import java.util.concurrent.ExecutorService;
-import java.util.concurrent.Executors;
+import java.util.concurrent.*;
 
 public class MainClass {
     public static final int CARS_COUNT = 4 ;
     private static CountDownLatch cdl = new CountDownLatch(CARS_COUNT);
-    public static void main (String[] args) {
+    public static void main (String[] args) throws ExecutionException, InterruptedException {
         System.out.println( "ВАЖНОЕ ОБЪЯВЛЕНИЕ >>> Подготовка!!!" );
         Race race = new Race( new Road( 60 ), new Tunnel(), new Road( 40 ));
         Car[] cars = new Car[CARS_COUNT];
