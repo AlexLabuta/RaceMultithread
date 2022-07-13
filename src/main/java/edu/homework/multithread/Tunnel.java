@@ -2,13 +2,12 @@ package edu.homework.multithread;
 
 import java.util.concurrent.Semaphore;
 
-import static edu.homework.multithread.MainClass.CARS_COUNT;
-
 public class Tunnel extends Stage{
-    Semaphore smp = new Semaphore(CARS_COUNT / 2);
+    private Semaphore smp;
     public Tunnel () {
         this .length = 80 ;
         this .description = "Тоннель " + length + " метров" ;
+        this.smp = new Semaphore(MainClass.CARS_COUNT / 2);
     }
     @Override
     public void go (Car c) {
