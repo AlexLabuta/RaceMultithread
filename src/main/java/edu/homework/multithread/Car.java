@@ -11,12 +11,10 @@ public class Car implements Runnable{
     private int speed;
     private String name;
 
-
     static {
         CARS_COUNT = 0;
         aiForWinner = new AtomicInteger(0);
     }
-
 
     public String getName () {
         return name;
@@ -50,7 +48,5 @@ public class Car implements Runnable{
         } catch (Exception e) {
             e.printStackTrace();
         }
-
     }
-
 }
